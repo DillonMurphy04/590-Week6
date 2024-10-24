@@ -1,0 +1,127 @@
+---
+title: "Understanding Neural Networks"
+author: "Dillon, Liam, Kendall, Nathan"
+format: html
+editor: visual
+---
+
+# Introduction
+
+In this activity, you will experiment with neural networks using the [TensorFlow Playground](https://playground.tensorflow.org/). This web-based tool allows you to adjust different parameters and see how they affect the learning process of a neural network.
+
+## First: Understanding Neural Networks and the Hyper parameters
+
+### **Inputting Data & Weight Initialization**
+
+-   We begin by inputting data, which will typically be standardized to ensure all features contribute equally.
+
+-   Can use engineered combinations of the original features or non-linear transformations like polynomial features.
+
+-   Before training, weights will be initialized. There are multiple ways for this.
+
+    -   If weights all initialized to 0 or the same constant value leasd to symmetry problem, since if all the weights were initialized to the same value, the neurons in each layer would learn the same features and update symmetrically during training, which would lead to inefficient training.
+
+    -   Weights are typically initialized randomly from a distribution with a mean of 0 and variance of approximately 1, so they are neither to small or large.
+
+    -   Optimized methods for initialization have been created:
+
+        -   Xavier or Glorot initialization works well for networks using activations with zero mean, such as the sigmoid and tanh functions.
+        -   When using ReLU activation that does not have zero mean, it’s recommended to use the He initialization.
+
+    Hover over the dashed lines between the neurons to see the initialized weights.
+
+### **Forward Pass (Inference)**
+
+-   The input data is assigned to the input layer's neurons, the input layer passes its values into the first hidden layer.
+
+-   Each neuron in the hidden layers computes the weighted sum of its inputs and adds its bias term: Z = Σ(Wij \* Xj) + bi
+
+-   After calculating the weighted sum, an activation function (e.g., ReLU, Sigmoid, or Tanh) is applied to introduce non-linearity into the model
+
+-   The output layer neurons perform the same computation as the hidden layers, producing the final predictions or values.
+
+### **Activation Functions**
+
+Here are some examples of activation functions, the following can be found in the playground.
+
+**Linear**
+
+![](images/clipboard-174274396.png)
+
+**Equation :** f(x) = x
+
+**Range :** (-infinity to infinity)
+
+Doesn't really help with complexity and not usually used
+
+**Non-Linear**
+
+*Sigmoid*
+
+![](images/clipboard-1988640948.png)
+
+**Range:** 0 to 1
+
+Used for models where predicting the probability of an output.
+
+*Tanh*
+
+![](images/clipboard-4273170593.png)
+
+**Range:** -1 to 1
+
+The tanh function is mainly used classification between two classes.
+
+*ReLU*
+
+![](images/clipboard-2687380426.png)
+
+**Range:** \[ 0 to infinity)
+
+Try playing around with the activation functions and notice how the nodes change. Specifically how the colors change which correspond to negative vs positive values.
+
+### Loss Function
+
+After the forward pass, the output is compared to the actual target values using a loss function such as MSE or cross-entropy.
+
+### Backward Pass (**Backpropagation**)
+
+The network learns from its mistakes and updates to minimize loss. Steps:
+
+-   First the gradient of the loss is calculated with respect to weights and biases using calculus. This represents how much a change in a weight will affect the loss
+
+-   Then the weights are adjusted by subtracting the gradient multiplied by the **learning rate**.
+
+-   If using **regularization**. (Like L1 for Ridge and L2 for LASSO), these penalties will be added to the loss function when computing the gradient.
+
+### Repeat for Batches and Epochs
+
+-   This process is repeated for each batch of data within an epoch. After all batches are processed, the model has completed one epoch.
+
+-   The model is typically trained over multiple epochs, allowing it to refine the weights incrementally.
+
+## Summary of the Hyperparameters
+
+-   **Learning Rate**: Controls the magnitude of weight updates during backpropagation.
+
+-   **Activation Function**: Applied after each layer's weighted sum to introduce non-linearity.
+
+-   **Regularization**: Added to the loss function to discourage overfitting by penalizing large weights.
+
+-   **Regularization Rate**: Determines the strength of regularization applied.
+
+-   **Batch Size**: Defines the number of samples processed before weight updates; smaller sizes lead to more frequent updates.
+
+-   **Epochs**: Indicates how many times the entire dataset will be processed through the network.
+
+## Time to Try it for Yourself
+
+## Sources
+
+<https://towardsdatascience.com/activation-functions-neural-networks-1cbd9f8d91d6>
+
+<https://medium.com/>@sarita_68521/basic-understanding-of-neural-network-structure-eecc8f149a23
+
+<https://www.pinecone.io/learn/weight-initialization/>
+
+<https://playground.tensorflow.org/#activation=tanh&batchSize=9&dataset=spiral&regDataset=reg-gauss&learningRate=0.001&regularizationRate=0.001&noise=0&networkShape=6,3,2,2,2&seed=0.24126&showTestData=true&discretize=false&percTrainData=50&x=true&y=true&xTimesY=false&xSquared=false&ySquared=false&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=classification&initZero=false&hideText=false>
