@@ -11,6 +11,8 @@ In this activity, you will experiment with neural networks using the [TensorFlow
 
 ## First: Understanding Neural Networks and the Hyper parameters
 
+**Start with a single neuron and a single hidden layer for easy comprehension**
+
 ### **Inputting Data & Weight Initialization**
 
 -   We begin by inputting data, which will typically be standardized to ensure all features contribute equally.
