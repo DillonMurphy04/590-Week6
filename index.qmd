@@ -25,7 +25,7 @@ In this activity, you will experiment with neural networks using the [TensorFlow
 
     -   If the weights were all initialized to 0 or the same constant value this could lead to symmetry problems, since if all the weights were initialized to the same value, the neurons in each layer would learn the same features and update symmetrically during training, which would lead to inefficient training.
 
-    -   Weights are typically initialized randomly from a distribution with a mean of 0 and variance of approximately 1, so they are neither to small or large.
+    -   Weights are typically initialized randomly from a distribution with a variance of approximately 1, so they are neither to small or large.
 
     -   Optimized methods for initialization have been created:
 

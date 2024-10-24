@@ -84,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Before training, weights will be initialized. There are multiple ways for this.</p>
 <ul>
 <li><p>If the weights were all initialized to 0 or the same constant value this could lead to symmetry problems, since if all the weights were initialized to the same value, the neurons in each layer would learn the same features and update symmetrically during training, which would lead to inefficient training.</p></li>
-<li><p>Weights are typically initialized randomly from a distribution with a mean of 0 and variance of approximately 1, so they are neither to small or large.</p></li>
+<li><p>Weights are typically initialized randomly from a distribution with a variance of approximately 1, so they are neither to small or large.</p></li>
 <li><p>Optimized methods for initialization have been created:</p>
 <ul>
 <li>Xavier or Glorot initialization works well for networks using activations with zero mean, such as the sigmoid and tanh functions.</li>
