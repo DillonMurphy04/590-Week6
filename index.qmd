@@ -15,6 +15,8 @@ In this activity, you will experiment with neural networks using the [TensorFlow
 
 -   We begin by inputting data, which will typically be standardized to ensure all features contribute equally.
 
+-   In the playground you can see we have two main features X1 (x coordinate) and X2 (y coordinate)
+
 -   Can use engineered combinations of the original features or non-linear transformations like polynomial features.
 
 -   Before training, weights will be initialized. There are multiple ways for this.
@@ -28,7 +30,7 @@ In this activity, you will experiment with neural networks using the [TensorFlow
         -   Xavier or Glorot initialization works well for networks using activations with zero mean, such as the sigmoid and tanh functions.
         -   When using ReLU activation that does not have zero mean, it’s recommended to use the He initialization.
 
-    Hover over the dashed lines between the neurons to see the initialized weights.
+    Hover over the dashed lines between the neurons to see the initialized weights. Colors code negative vs positive.
 
 ### **Forward Pass (Inference)**
 
