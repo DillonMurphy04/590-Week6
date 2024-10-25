@@ -159,6 +159,72 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="time-to-try-it-for-yourself" class="level2">
 <h2 class="anchored" data-anchor-id="time-to-try-it-for-yourself">Time to Try it for Yourself</h2>
+<ol type="1">
+<li><p><strong>Task 1: Changing Network Complexity</strong></p>
+<ul>
+<li><p>Select the <strong>circle dataset</strong> and set the <strong>network shape</strong> to a simple configuration (e.g., 1 hidden layer with 2 neurons).</p></li>
+<li><p>Run the model and observe the output. Increase the number of neurons and layers gradually, noting how model accuracy changes.</p></li>
+<li><p><strong>Discussion</strong>: How does increasing the number of neurons/layers affect the model’s ability to learn complex patterns? Discuss overfitting and underfitting.</p></li>
+<li><p><strong>Key Points</strong>: More complex networks can learn detailed patterns, but they are also more prone to overfitting, meaning they might perform well on training data but poorly on test data.</p></li>
+</ul></li>
+<li><p><strong>Task 2: Exploring Activation Functions</strong></p>
+<ul>
+<li><p>Set the network shape to <strong>2 hidden layers with 4 neurons each</strong>.</p></li>
+<li><p>Experiment with different <strong>activation functions</strong> (ReLU, sigmoid, tanh). Observe how each activation function impacts the model’s decision boundary.</p></li>
+<li><p><strong>Discussion</strong>: How does the choice of activation function affect the model’s performance? Why might some functions be better suited to specific types of data? How did each activation function perform on different datasets? Why might ReLU be popular in deeper networks?</p></li>
+<li><p><strong>Key Points</strong>: ReLU is efficient for deeper networks since it helps with gradient flow, whereas sigmoid and tanh are useful for controlling outputs within certain ranges. Students should understand that the choice of activation function can impact learning dynamics.</p></li>
+</ul></li>
+<li><p><strong>Task 3: Playing with Regularization</strong></p>
+<ul>
+<li><p>Use the <strong>circle dataset</strong> and a moderate network shape (e.g., 3 hidden layers with 3 neurons each).</p></li>
+<li><p>Set <strong>regularization to None</strong> and observe the model’s decision boundary.</p></li>
+<li><p>Next, apply <strong>L2 regularization</strong> and increase the <strong>regularization rate</strong>. Run the model and observe the boundary.</p></li>
+<li><p><strong>Discussion</strong>: How does adding regularization impact the model? How does it help with overfitting? What did you observe when using L2 regularization? How does regularization help prevent overfitting?</p></li>
+<li><p><strong>Key Points</strong>: Regularization penalizes large weights, helping the network focus on general patterns rather than memorizing the training data. This makes it useful for preventing overfitting, which is key to creating a model that generalizes well.</p></li>
+</ul></li>
+<li><p><strong>Task 4: Effect of Learning Rate</strong></p>
+<ul>
+<li><p>Choose a network shape of <strong>2 hidden layers with 4 neurons each</strong>.</p></li>
+<li><p>Run the model with different <strong>learning rates</strong> (e.g., 0.001, 0.01, 0.1). Observe how quickly or slowly the model converges on a solution.</p></li>
+<li><p><strong>Discussion</strong>: What happens when the learning rate is too high or too low? Why is a balanced learning rate important for training? How did the model behave with different learning rates? What problems did you notice with too high or too low learning rates?</p></li>
+<li><p><strong>Key Points</strong>: A high learning rate can cause the model to overshoot optimal solutions, while a low rate slows training significantly. A balanced learning rate is essential for efficient convergence.</p></li>
+</ul></li>
+<li><p><strong>Task 5: Put it all together</strong></p>
+<ul>
+<li><p><strong>Choose the Spiral dataset with a network shape of&nbsp; 2 hidden layers with 4 neurons each.</strong></p></li>
+<li><p><strong>Using the different components above, find a model with hyperparameters that most effectively reduce the training and test loss.</strong></p></li>
+<li><p><strong>Lowest training error without overfitting WINS!</strong></p></li>
+</ul></li>
+</ol>
+<section id="discussion-questions-for-task-5" class="level3">
+<h3 class="anchored" data-anchor-id="discussion-questions-for-task-5"><strong>Discussion Questions for Task 5:</strong></h3>
+<ol type="1">
+<li><p><strong>What hyperparameters did you choose, and why?</strong></p>
+<ul>
+<li><strong>Key Point</strong>: Emphasize that hyperparameters are chosen based on the balance between model complexity and generalization. For instance, students might mention selecting specific activation functions, regularization types, or learning rates to manage this balance.</li>
+</ul></li>
+<li><p><strong>How did you know when you were overfitting or underfitting?</strong></p>
+<ul>
+<li><strong>Key Point</strong>: Discuss observable signs of overfitting (e.g., low training error but high test error) and underfitting (e.g., high error on both training and test sets). Reinforce how tracking training and test errors during tuning can signal whether a model is learning general patterns or simply memorizing data.</li>
+</ul></li>
+<li><p><strong>Which activation function(s) worked best for this task? Why do you think that is?</strong></p>
+<ul>
+<li><strong>Key Point</strong>: ReLU often works well for deeper networks because it mitigates issues like the vanishing gradient problem, but for certain datasets, students might find tanh or sigmoid also effective. Discuss how each function’s properties suit different data patterns and layers.</li>
+</ul></li>
+<li><p><strong>How did regularization affect your model’s performance?</strong></p>
+<ul>
+<li><strong>Key Point</strong>: Point out that regularization, such as L2 or L1, prevents overfitting by penalizing large weights, thus focusing the model on broader patterns rather than noise in the training data. It’s a useful tool when the model’s test error rises as training error decreases, signaling overfitting.</li>
+</ul></li>
+<li><p><strong>What challenges did you face in tuning the learning rate, and how did you resolve them?</strong></p>
+<ul>
+<li><strong>Key Point</strong>: High learning rates can lead to erratic training (jumping over minima), while low rates can slow convergence. Emphasize the importance of experimenting with different learning rates to find one that allows efficient training without causing the model to diverge.</li>
+</ul></li>
+<li><p><strong>Did you encounter any situations where adding more layers or neurons improved performance? When did it hinder it?</strong></p>
+<ul>
+<li><strong>Key Point</strong>: Adding layers or neurons can capture more complex patterns but also increases the risk of overfitting. Reinforce that sometimes simpler models generalize better, especially when data patterns are not overly complex.</li>
+</ul></li>
+</ol>
+</section>
 </section>
 <section id="sources" class="level2">
 <h2 class="anchored" data-anchor-id="sources">Sources</h2>
